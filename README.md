@@ -4,7 +4,7 @@
 
 ## Due Date
 
-Week 2 Monday 5:00 pm AEST
+Week 3 Monday 5:00 pm AEST
 
 ## Background
 
@@ -40,7 +40,7 @@ In this lab, we first attempt to rank fast food restaurants based on an ordered 
             <li>valueForMoney</li>
             <li>timeToMake</li>
             <li>taste</li>
-            <li>name (in lexicographical order, case-insensitive)</li>
+            <li>name (in <b>ascending lexicographical order</b>, case-insensitive)</li>
         </ol>
         For example, if two restaurants have the same customerService and foodVariety, the one with a higher valueForMoney will be in front (nearer to the start of the returned array).
         <br/><br/>
@@ -64,12 +64,12 @@ In this lab, we first attempt to rank fast food restaurants based on an ordered 
     <td>
         <code>sortedSatisfaction</code><br /><br />
         Given an array of fast food restaurants, return a new sorted
-        array ranked by the overall satisfaction.
+        array ranked by the overall satisfaction (highest first).
         <br/><br/>
         See below for a mathematical representation of the satisfaction formula.
         <br/><br/>
         If two restaurants have the same satisfaction, the names
-        are compared in lexicographical order (case-insensitive).
+        are compared in ascending lexicographical order (case-insensitive).
         For example, "hungry Jacks" will appear before "KFC" because 
         "h" is before "K".
         <br/><br/>

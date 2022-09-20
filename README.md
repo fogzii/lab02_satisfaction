@@ -157,7 +157,8 @@ Complete each function in [Interface: Functions](#interface-functions).
 #### Hint: 
 - You may want to introduce a helper function that compares two restaurants and return a positive, zero, or negative number depending
 on whether the first or second restaurant is considered "better".
-- You may find the `.sort()` method of arrays may be useful, although this lab can still be done without it.
+- You may find the `.sort()` method of arrays useful, although this lab can definitely be completed without it.
+- For sorting lexicographically, you may want to look into the `.localeCompare` method for strings!
 
 ### Assumptions:
 1. All restaurant names will be case-insensitively unique.
@@ -181,8 +182,6 @@ This executes the code in [satisfaction.js](leap.js).
 **If you have pushed your latest changes to master on Gitlab no further action is required! At the due date and time, we automatically collect your work from what's on your master branch on Gitlab.**
 
 ## Notes
-- For sorting lexicographically, you may want to look into the `.localeCompare` method for strings!
-- You are welcome to use the `.sort()` method of arrays, although you will need to do further research on this. It is possible to complete the lab without it.
 - Passing the given tests is a good indication of correctness but does not guarantee that you will receive the full mark for the lab.
 - You are advised to do further testing.
 - You are not allowed to use any external libraries/modules in this exercise.

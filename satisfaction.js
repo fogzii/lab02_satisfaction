@@ -20,12 +20,12 @@
  *
  * @param {
  *   Array<{
- *      name: string,
- *      customerService: number,
- *      foodVariety: number,
- *      valueForMoney: number,
- *      timeToMake: number,
- *      taste: number
+ *     name: string,
+ *     customerService: number,
+ *     foodVariety: number,
+ *     valueForMoney: number,
+ *     timeToMake: number,
+ *     taste: number
  *   }>
  * } fastFoodArray with information about fast food restaurants,
  * which should not be modified.

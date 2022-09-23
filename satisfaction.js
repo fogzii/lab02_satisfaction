@@ -99,8 +99,16 @@ function sortedSatisfaction(fastFoodArray) {
     if (sat_check(a, b)) return -1;
     return 1;
   });
-
-  return arr;
+  let act = [];
+  for (const i in arr) {
+    const obj = {
+      name: arr[i].name,
+      satisfaction: (arr[i].customerService + arr[i].foodVariety + arr[i].valueForMoney +
+        arr[i].timeToMake + arr[i].taste) / 5,
+    }
+    act.push(obj);
+  }
+  return act;
 }
 
 function sat_check(comp1, comp2) {
@@ -152,7 +160,24 @@ const fastFoods = [
     taste: 5
   },
 ];
-
+const t = [
+  {
+    name: 'ab',
+    customerService: 1,
+    foodVariety: 1,
+    valueForMoney: 1,
+    timeToMake: 1,
+    taste: 1,
+  },
+  {
+    name: 'AB',
+    customerService: 1,
+    foodVariety: 1,
+    valueForMoney: 1,
+    timeToMake: 1,
+    taste: 1,
+  },
+]
 const f = [
   {
     name: 'tings',
@@ -277,11 +302,11 @@ console.log();
 console.log('========================');
 console.log('1a. Testing Fast Food');
 console.log('===========');
-console.log(sortedFastFood(g));
+console.log(sortedFastFood(t));
 console.log();
 
 console.log('========================');
 console.log('2. Testing Satisfaction');
 console.log('===========');
-console.log(sortedSatisfaction(f));
+console.log(sortedSatisfaction(fastFoods));
 console.log();

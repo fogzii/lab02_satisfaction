@@ -44,7 +44,7 @@ In this lab, we first attempt to rank fast food restaurants based on an ordered 
         </ol>
         For example, if two restaurants have the same customerService and foodVariety, the one with a higher valueForMoney will be in front (nearer to the start of the returned array).
         <br/><br/>
-        If all other fields are equal and the name is compared, "hungry Jacks" will be before "KFC" because "h" is before "K".
+        If all numerical fields are equal and the name is compared, "hungry Jacks" will be before "KFC" because "h" is before "K".
         <br/><br/>
         You should NOT modify the order of the original array.
         <br/><br/>

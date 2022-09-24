@@ -13,7 +13,7 @@
  * and foodVariety, the one with a higher valueForMoney will be
  * in front (nearer to the start of the returned array).
  *
- * If the all other fields are equal and the name is compared,
+ * If all numerical fields are equal and the name is compared,
  * "hungry Jacks" will be before "KFC" because "h" is before "K".
  *
  * WARNING: You should NOT modify the order of the original array.

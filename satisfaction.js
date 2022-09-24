@@ -32,26 +32,46 @@
  * @returns array with the same items, sorted by the key-order given.
  */
 function sortedFastFood(fastFoodArray) {
-  // TODO: Observe the return type from the stub code
-  // FIXME: Replace the stub code with your implementation
-  return [
-    {
-      name: 'kentucky',
-      customerService: 4,
-      foodVariety: 3,
-      valueForMoney: 4,
-      timeToMake: 4,
-      taste: 3
-    },
-    {
-      name: 'maccas',
-      customerService: 3,
-      foodVariety: 3,
-      valueForMoney: 3,
-      timeToMake: 4,
-      taste: 3
-    },
-  ];
+  const sortedArray = [];
+  for (const key in fastFoodArray) {
+    sortedArray[key] = fastFoodArray[key];
+  }
+  let key = 'customerService';
+  sortInteger(sortedArray, key);
+  key = 'foodVariety';
+  sortInteger(sortedArray, key);
+  key = 'valueForMoney';
+  sortInteger(sortedArray, key);
+  key = 'timeToMake';
+  sortInteger(sortedArray, key);
+  key = 'taste';
+  sortInteger(sortedArray, key);
+  sortName(sortedArray);
+
+  return sortedArray;
+}
+
+// helper function to sort integers
+function sortInteger(array, key) {
+  array.sort((a, b) => {
+    return b.key - a.key;
+  });
+}
+
+// helper function to sort name
+function sortName(array) {
+  array.sort((a, b) => {
+    let x = a.name.toUpperCase();
+    let y = b.name.toUpperCase();
+    if (x == y) {
+      return 0;
+    }
+    if (x > y) {
+      return 1;
+    }
+    if (x < y) {
+    } return -1;
+  });
 }
 
 /**
@@ -90,18 +110,40 @@ function sortedFastFood(fastFoodArray) {
  * will be the same as the original name given.
  */
 function sortedSatisfaction(fastFoodArray) {
-  // TODO: Observe the return type from the stub code
-  // FIXME: Replace the stub code with your implementation
-  return [
-    {
-      restaurantName: 'kentucky',
-      satisfaction: 3.6,
-    },
-    {
-      restaurantName: 'maccas',
-      satisfaction: 3.2
+  const sortedArray = [];
+  for (const key in fastFoodArray) {
+    let sum = (fastFoodArray[key].customerService + fastFoodArray[key].foodVariety +
+              fastFoodArray[key].valueForMoney + fastFoodArray[key].timeToMake + 
+              fastFoodArray[key].taste);
+    let average = sum / 5;
+
+    sortedArray[key] = {
+      restaurantName: fastFoodArray[key].name,
+      satisfaction: average
     }
-  ];
+  }
+
+  let key = 'satisfaction';
+  sortInteger(sortedArray, key);
+  sortRestaurantName(sortedArray);
+
+  return sortedArray;
+}
+
+// helper function to sort restaurantName
+function sortRestaurantName(array) {
+  array.sort((a, b) => {
+    let x = a.restaurantName.toUpperCase();
+    let y = b.restaurantName.toUpperCase();
+    if (x == y) {
+      return 0;
+    }
+    if (x > y) {
+      return 1;
+    }
+    if (x < y) {
+    } return -1;
+  });
 }
 
 // ========================================================================= //

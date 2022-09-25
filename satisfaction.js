@@ -49,8 +49,8 @@ function sortedFastFood(fastFoodArray) {
     if (a.taste > b.taste) return -1;
     else if (a.taste < b.taste) return 1;
 
-    if (a.name < b.name) return -1;
-    else if (a.name > b.name) return 1;
+    if (a.name.toUpperCase() < b.name.toUpperCase()) return -1;
+    else if (a.name.toUpperCase() > b.name.toUpperCase()) return 1;
   });
 
   return arr;
@@ -162,7 +162,7 @@ const fastFoods = [
 ];
 const t = [
   {
-    name: 'ab',
+    name: 'hungry jacks',
     customerService: 1,
     foodVariety: 1,
     valueForMoney: 1,
@@ -170,7 +170,7 @@ const t = [
     taste: 1,
   },
   {
-    name: 'AB',
+    name: 'KFC',
     customerService: 1,
     foodVariety: 1,
     valueForMoney: 1,

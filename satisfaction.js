@@ -120,7 +120,7 @@ function sat_check(comp1, comp2) {
 
   if (c1 > c2) return true;
   else if (c2 > c1) return false;
-  return comp1.name < comp2.name;
+  return comp1.name.toUpperCase() < comp2.name.toUpperCase();
 }
 
 // ========================================================================= //
@@ -308,5 +308,5 @@ console.log();
 console.log('========================');
 console.log('2. Testing Satisfaction');
 console.log('===========');
-console.log(sortedSatisfaction(fastFoods));
+console.log(sortedSatisfaction(t));
 console.log();

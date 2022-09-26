@@ -36,17 +36,17 @@ function sortedFastFood(fastFoodArray) {
   for (const key in fastFoodArray) {
     sortedArray[key] = fastFoodArray[key];
   }
-  let key = 'customerService';
-  sortInteger(sortedArray, key);
-  key = 'foodVariety';
-  sortInteger(sortedArray, key);
-  key = 'valueForMoney';
+  sortName(sortedArray);
+  let key = 'taste';
   sortInteger(sortedArray, key);
   key = 'timeToMake';
   sortInteger(sortedArray, key);
-  key = 'taste';
+  key = 'valueForMoney';
   sortInteger(sortedArray, key);
-  sortName(sortedArray);
+  key = 'foodVariety';
+  sortInteger(sortedArray, key);
+  key = 'customerService';
+  sortInteger(sortedArray, key);
 
   return sortedArray;
 }
@@ -54,7 +54,7 @@ function sortedFastFood(fastFoodArray) {
 // helper function to sort integers
 function sortInteger(array, key) {
   array.sort((a, b) => {
-    return b.key - a.key;
+    return b[key] - a[key];
   });
 }
 
@@ -123,9 +123,9 @@ function sortedSatisfaction(fastFoodArray) {
     }
   }
 
+  sortRestaurantName(sortedArray);
   let key = 'satisfaction';
   sortInteger(sortedArray, key);
-  sortRestaurantName(sortedArray);
 
   return sortedArray;
 }

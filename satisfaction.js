@@ -94,33 +94,24 @@ function sortedFastFood(fastFoodArray) {
  * will be the same as the original name given.
  */
 function sortedSatisfaction(fastFoodArray) {
-
-  let arr = fastFoodArray.sort((a, b) => {
-    if (sat_check(a, b)) return -1;
-    return 1;
-  });
-  let act = [];
-  for (const i in arr) {
+  let arr = []
+  for (const i in fastFoodArray) {
     const obj = {
-      name: arr[i].name,
-      satisfaction: (arr[i].customerService + arr[i].foodVariety + arr[i].valueForMoney +
-        arr[i].timeToMake + arr[i].taste) / 5,
+      name: fastFoodArray[i].name,
+      satisfaction: (fastFoodArray[i].customerService + fastFoodArray[i].foodVariety + fastFoodArray[i].valueForMoney +
+        fastFoodArray[i].timeToMake + fastFoodArray[i].taste) / 5,
     }
-    act.push(obj);
+    arr.push(obj);
   }
-  return act;
-}
+  arr = arr.sort((a, b) => {
+    if (a.satisfaction > b.satisfaction) return -1;
+    else if (a.satisfaction < b.satisfaction) return 1;
 
-function sat_check(comp1, comp2) {
-  let c1, c2;
-  c1 = (comp1.customerService + comp1.foodVariety + comp1.valueForMoney +
-    comp1.timeToMake + comp1.taste) / 5;
-  c2 = (comp2.customerService + comp2.foodVariety + comp2.valueForMoney +
-    comp2.timeToMake + comp2.taste) / 5;
+    if (a.name.toUpperCase() < b.name.toUpperCase()) return -1;
+    else if (a.name.toUpperCase() > b.name.toUpperCase()) return 1;
+  })
 
-  if (c1 > c2) return true;
-  else if (c2 > c1) return false;
-  return comp1.name.toUpperCase() < comp2.name.toUpperCase();
+  return arr;
 }
 
 // ========================================================================= //
@@ -162,7 +153,7 @@ const fastFoods = [
 ];
 const t = [
   {
-    name: 'hungry jacks',
+    name: 'KFC',
     customerService: 1,
     foodVariety: 1,
     valueForMoney: 1,
@@ -170,7 +161,7 @@ const t = [
     taste: 1,
   },
   {
-    name: 'KFC',
+    name: 'hungry jacks',
     customerService: 1,
     foodVariety: 1,
     valueForMoney: 1,
@@ -293,20 +284,20 @@ const g = [
 ]
 // Note: We are using console.log because arrays cannot be commpared with ===.
 // There are better ways to test which we will explore in future weeks :).
-console.log('========================');
-console.log('1. Testing Fast Food');
-console.log('===========');
-console.log(sortedFastFood(fastFoods));
-console.log();
-
-console.log('========================');
-console.log('1a. Testing Fast Food');
-console.log('===========');
-console.log(sortedFastFood(t));
-console.log();
-
+//console.log('========================');
+//console.log('1. Testing Fast Food');
+//console.log('===========');
+//console.log(sortedFastFood(fastFoods));
+//console.log();
+//
+//console.log('========================');
+//console.log('1a. Testing Fast Food');
+//console.log('===========');
+//console.log(sortedFastFood(t));
+//console.log();
+//
 console.log('========================');
 console.log('2. Testing Satisfaction');
 console.log('===========');
-console.log(sortedSatisfaction(t));
+console.log(sortedSatisfaction(g));
 console.log();

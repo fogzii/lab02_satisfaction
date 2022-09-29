@@ -97,7 +97,7 @@ function sortedSatisfaction(fastFoodArray) {
   let arr = []
   for (const i in fastFoodArray) {
     const obj = {
-      restaurantName: fastFoodArray[i].name,
+      name: fastFoodArray[i].name,
       satisfaction: (fastFoodArray[i].customerService + fastFoodArray[i].foodVariety + fastFoodArray[i].valueForMoney +
         fastFoodArray[i].timeToMake + fastFoodArray[i].taste) / 5,
     }
@@ -295,7 +295,7 @@ const g = [
 //console.log('===========');
 //console.log(sortedFastFood(t));
 //console.log();
-//i
+//
 console.log('========================');
 console.log('2. Testing Satisfaction');
 console.log('===========');

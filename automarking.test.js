@@ -114,7 +114,7 @@ describe('Testing sortedSatisfaction', () => {
 
   const satistify = (restaurant) => ({
     restaurantName: restaurant.name,
-    satisfaction: getSatisfaction(restaurant),
+    satisfaction: expect.closeTo(getSatisfaction(restaurant), 2),
   });
 
   test('empty', () => {
